@@ -47,9 +47,9 @@ public class AmobaJatek extends JFrame implements ActionListener{
             setVisible(true);
         }
         void kezdes(){
-            if(palyaszam<=10)setSize(600,600);
-            if(palyaszam>=11 && palyaszam<=19)setSize(800,800);
-            if(palyaszam>=20)setSize(1000,1000);
+            if(palyaszam<=10) {setSize(600,600); cimke.setFont(new Font("Serif", Font.PLAIN, 30)); };
+            if(palyaszam>=11 && palyaszam<=19){ setSize(800,800); cimke.setFont(new Font("Serif", Font.PLAIN, 40));};
+            if(palyaszam>=20){ setSize(1000,1000); cimke.setFont(new Font("Serif", Font.PLAIN, 40));};
             
             setLocationRelativeTo(null);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,8 +57,8 @@ public class AmobaJatek extends JFrame implements ActionListener{
             border.setLayout(new BorderLayout());
             JPanel gombok=new JPanel();
             gombok.setLayout(new GridLayout(1,3));
+           
             
-            cimke.setFont(new Font("Serif", Font.PLAIN, 40));
             cimke.setText("1. játékos köre");
             vissza.setState(3);
             felad.setState(4);
@@ -75,6 +75,7 @@ public class AmobaJatek extends JFrame implements ActionListener{
             vissza.addActionListener(this);
             felad.addActionListener(this);
             gombok.add(vissza);
+            vissza.setEnabled(false);
             gombok.add(felad);
             
             for (int i = 0; i < palyaszam; i++) {
